@@ -5,101 +5,101 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb } from '@/components/ui/breadcrumb';
 
-interface ArchitectureNode {
+interface FrameworkNode {
   id: string;
   title: string;
   description: string;
-  type: 'pattern' | 'style' | 'microservices' | 'cloud' | 'security' | 'performance' | 'scalability' | 'monitoring';
+  type: 'web' | 'mobile' | 'backend' | 'ml' | 'game' | 'desktop' | 'cloud' | 'testing';
   content: string;
   icon: string;
 }
 
-const architectureNodes: ArchitectureNode[] = [
+const frameworkNodes: FrameworkNode[] = [
   {
-    id: 'design-patterns',
-    title: '디자인 패턴',
-    description: '소프트웨어 디자인 패턴',
-    type: 'pattern',
-    icon: '🎯',
-    content: '디자인 패턴 내용'
+    id: 'web-frameworks',
+    title: '웹 프레임워크',
+    description: 'React, Vue, Angular, Svelte, Next.js',
+    type: 'web',
+    icon: '🌐',
+    content: '웹 프레임워크 내용'
   },
   {
-    id: 'architectural-styles',
-    title: '아키텍처 스타일',
-    description: '다양한 아키텍처 스타일',
-    type: 'style',
-    icon: '🏗️',
-    content: '아키텍처 스타일 내용'
+    id: 'mobile-frameworks',
+    title: '모바일 프레임워크',
+    description: 'React Native, Flutter, Xamarin, Ionic',
+    type: 'mobile',
+    icon: '📱',
+    content: '모바일 프레임워크 내용'
   },
   {
-    id: 'microservices',
-    title: '마이크로서비스',
-    description: '마이크로서비스 아키텍처',
-    type: 'microservices',
-    icon: '🔧',
-    content: '마이크로서비스 내용'
+    id: 'backend-frameworks',
+    title: '백엔드 프레임워크',
+    description: 'Spring, Django, Express, FastAPI',
+    type: 'backend',
+    icon: '⚙️',
+    content: '백엔드 프레임워크 내용'
   },
   {
-    id: 'cloud-architecture',
-    title: '클라우드 아키텍처',
-    description: '클라우드 기반 아키텍처',
+    id: 'ml-frameworks',
+    title: 'ML/AI 프레임워크',
+    description: 'TensorFlow, PyTorch, Scikit-learn',
+    type: 'ml',
+    icon: '🤖',
+    content: 'ML/AI 프레임워크 내용'
+  },
+  {
+    id: 'game-frameworks',
+    title: '게임 프레임워크',
+    description: 'Unity, Unreal Engine, Godot',
+    type: 'game',
+    icon: '🎮',
+    content: '게임 프레임워크 내용'
+  },
+  {
+    id: 'desktop-frameworks',
+    title: '데스크톱 프레임워크',
+    description: 'Electron, Tauri, Qt, WPF',
+    type: 'desktop',
+    icon: '🖥️',
+    content: '데스크톱 프레임워크 내용'
+  },
+  {
+    id: 'cloud-frameworks',
+    title: '클라우드 프레임워크',
+    description: 'Serverless, Cloud Native, Microservices',
     type: 'cloud',
     icon: '☁️',
-    content: '클라우드 아키텍처 내용'
+    content: '클라우드 프레임워크 내용'
   },
   {
-    id: 'security-architecture',
-    title: '보안 아키텍처',
-    description: '보안 중심 아키텍처',
-    type: 'security',
-    icon: '🔒',
-    content: '보안 아키텍처 내용'
-  },
-  {
-    id: 'performance-architecture',
-    title: '성능 아키텍처',
-    description: '성능 최적화 아키텍처',
-    type: 'performance',
-    icon: '⚡',
-    content: '성능 아키텍처 내용'
-  },
-  {
-    id: 'scalability-architecture',
-    title: '확장성 아키텍처',
-    description: '확장 가능한 아키텍처',
-    type: 'scalability',
-    icon: '📈',
-    content: '확장성 아키텍처 내용'
-  },
-  {
-    id: 'monitoring-architecture',
-    title: '모니터링 아키텍처',
-    description: '시스템 모니터링 아키텍처',
-    type: 'monitoring',
-    icon: '📊',
-    content: '모니터링 아키텍처 내용'
+    id: 'testing-frameworks',
+    title: '테스팅 프레임워크',
+    description: 'Jest, Cypress, Selenium, JUnit',
+    type: 'testing',
+    icon: '🧪',
+    content: '테스팅 프레임워크 내용'
   }
 ];
 
 const getNodeColor = (type: string) => {
   switch (type) {
-    case 'pattern': return 'bg-blue-600 dark:bg-blue-500';
-    case 'style': return 'bg-green-600 dark:bg-green-500';
-    case 'microservices': return 'bg-purple-600 dark:bg-purple-500';
-    case 'cloud': return 'bg-yellow-600 dark:bg-yellow-500';
-    case 'security': return 'bg-red-600 dark:bg-red-500';
-    case 'performance': return 'bg-orange-600 dark:bg-orange-500';
-    case 'scalability': return 'bg-indigo-600 dark:bg-indigo-500';
-    case 'monitoring': return 'bg-pink-600 dark:bg-pink-500';
+    case 'web': return 'bg-blue-600 dark:bg-blue-500';
+    case 'mobile': return 'bg-green-600 dark:bg-green-500';
+    case 'backend': return 'bg-purple-600 dark:bg-purple-500';
+    case 'ml': return 'bg-yellow-600 dark:bg-yellow-500';
+    case 'game': return 'bg-red-600 dark:bg-red-500';
+    case 'desktop': return 'bg-indigo-600 dark:bg-indigo-500';
+    case 'cloud': return 'bg-orange-600 dark:bg-orange-500';
+    case 'testing': return 'bg-pink-600 dark:bg-pink-500';
     default: return 'bg-gray-600 dark:bg-gray-500';
   }
 };
 
-export default function ArchitecturePage() {
-  const [selectedNode, setSelectedNode] = useState<ArchitectureNode | null>(null);
+export default function FrameworksPage() {
+  const [selectedNode, setSelectedNode] = useState<FrameworkNode | null>(null);
   const [isZoomed, setIsZoomed] = useState(false);
 
-  const handleNodeClick = (node: ArchitectureNode) => {
+  const handleNodeClick = (node: FrameworkNode) => {
     setSelectedNode(node);
     setIsZoomed(true);
   };
@@ -115,21 +115,21 @@ export default function ArchitecturePage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-black dark:text-white mb-4">
-            🏗️ 아키텍처 (Architecture)
+            🛠️ 프레임워크 (Frameworks)
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            소프트웨어 아키텍처, 디자인 패턴, 마이크로서비스에 대한 종합적인 가이드
+            웹, 모바일, 백엔드, ML/AI 프레임워크에 대한 종합적인 가이드
           </p>
         </div>
         
         {/* Breadcrumb */}
         <div className="mb-6">
-          <Breadcrumb items={[{ label: '아키텍처' }]} />
+          <Breadcrumb items={[{ label: '프레임워크' }]} />
         </div>
 
-        {/* Architecture Components Grid */}
+        {/* Frameworks Components Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {architectureNodes.map((node) => (
+          {frameworkNodes.map((node) => (
             <Card 
               key={node.id} 
               className="cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border border-gray-200 dark:border-gray-800"

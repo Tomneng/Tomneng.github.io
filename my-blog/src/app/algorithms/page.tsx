@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Breadcrumb } from '@/components/ui/breadcrumb';
 
 interface AlgorithmNode {
   id: string;
@@ -113,19 +114,17 @@ export default function AlgorithmsPage() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <Button 
-            variant="ghost" 
-            onClick={() => window.history.back()}
-            className="mb-4 text-black dark:text-white"
-          >
-            ← 뒤로 가기
-          </Button>
           <h1 className="text-4xl font-bold text-black dark:text-white mb-4">
             🧮 알고리즘 (Algorithms)
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
             정렬, 탐색, 그래프, 동적 프로그래밍에 대한 종합적인 가이드
           </p>
+        </div>
+        
+        {/* Breadcrumb */}
+        <div className="mb-6">
+          <Breadcrumb items={[{ label: '알고리즘' }]} />
         </div>
 
         {/* Algorithms Components Grid */}

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Breadcrumb } from '@/components/ui/breadcrumb';
 
 interface OSNode {
   id: string;
@@ -113,19 +114,17 @@ export default function OperatingSystemPage() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <Button 
-            variant="ghost" 
-            onClick={() => window.history.back()}
-            className="mb-4 text-black dark:text-white"
-          >
-            ← 뒤로 가기
-          </Button>
           <h1 className="text-4xl font-bold text-black dark:text-white mb-4">
             💻 운영체제 (Operating System)
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
             프로세스 관리, 메모리 관리, 파일 시스템, 커널에 대한 종합적인 가이드
           </p>
+        </div>
+        
+        {/* Breadcrumb */}
+        <div className="mb-6">
+          <Breadcrumb items={[{ label: '운영체제' }]} />
         </div>
 
         {/* OS Components Grid */}

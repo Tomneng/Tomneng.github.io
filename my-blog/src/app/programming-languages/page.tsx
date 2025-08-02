@@ -5,103 +5,139 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb } from '@/components/ui/breadcrumb';
 
-interface ArchitectureNode {
+interface LanguageNode {
   id: string;
   title: string;
   description: string;
-  type: 'pattern' | 'style' | 'microservices' | 'cloud' | 'security' | 'performance' | 'scalability' | 'monitoring';
+  type: 'backend' | 'frontend' | 'general' | 'web' | 'system' | 'functional' | 'mobile' | 'data';
   content: string;
   icon: string;
 }
 
-const architectureNodes: ArchitectureNode[] = [
+const languageNodes: LanguageNode[] = [
   {
-    id: 'design-patterns',
-    title: '디자인 패턴',
-    description: '소프트웨어 디자인 패턴',
-    type: 'pattern',
-    icon: '🎯',
-    content: '디자인 패턴 내용'
+    id: 'java',
+    title: 'Java',
+    description: '객체지향, JVM, Spring Framework',
+    type: 'backend',
+    icon: '☕',
+    content: 'Java 내용'
   },
   {
-    id: 'architectural-styles',
-    title: '아키텍처 스타일',
-    description: '다양한 아키텍처 스타일',
-    type: 'style',
-    icon: '🏗️',
-    content: '아키텍처 스타일 내용'
+    id: 'python',
+    title: 'Python',
+    description: '간단한 문법, 데이터 분석, AI/ML',
+    type: 'general',
+    icon: '🐍',
+    content: 'Python 내용'
   },
   {
-    id: 'microservices',
-    title: '마이크로서비스',
-    description: '마이크로서비스 아키텍처',
-    type: 'microservices',
-    icon: '🔧',
-    content: '마이크로서비스 내용'
+    id: 'javascript',
+    title: 'JavaScript',
+    description: '웹 브라우저, Node.js, ES6+',
+    type: 'frontend',
+    icon: '📜',
+    content: 'JavaScript 내용'
   },
   {
-    id: 'cloud-architecture',
-    title: '클라우드 아키텍처',
-    description: '클라우드 기반 아키텍처',
-    type: 'cloud',
-    icon: '☁️',
-    content: '클라우드 아키텍처 내용'
+    id: 'csharp',
+    title: 'C#',
+    description: '.NET, Unity, Windows 개발',
+    type: 'backend',
+    icon: '🔷',
+    content: 'C# 내용'
   },
   {
-    id: 'security-architecture',
-    title: '보안 아키텍처',
-    description: '보안 중심 아키텍처',
-    type: 'security',
-    icon: '🔒',
-    content: '보안 아키텍처 내용'
+    id: 'go',
+    title: 'Go',
+    description: '고성능, 동시성, 마이크로서비스',
+    type: 'backend',
+    icon: '🐹',
+    content: 'Go 내용'
   },
   {
-    id: 'performance-architecture',
-    title: '성능 아키텍처',
-    description: '성능 최적화 아키텍처',
-    type: 'performance',
+    id: 'rust',
+    title: 'Rust',
+    description: '메모리 안전성, 시스템 프로그래밍',
+    type: 'system',
+    icon: '🦀',
+    content: 'Rust 내용'
+  },
+  {
+    id: 'swift',
+    title: 'Swift',
+    description: 'iOS 개발, Apple 생태계',
+    type: 'mobile',
+    icon: '🍎',
+    content: 'Swift 내용'
+  },
+  {
+    id: 'kotlin',
+    title: 'Kotlin',
+    description: 'Android 개발, JVM 호환',
+    type: 'mobile',
+    icon: '🔶',
+    content: 'Kotlin 내용'
+  },
+  {
+    id: 'php',
+    title: 'PHP',
+    description: '웹 서버, WordPress, Laravel',
+    type: 'web',
+    icon: '🐘',
+    content: 'PHP 내용'
+  },
+  {
+    id: 'ruby',
+    title: 'Ruby',
+    description: 'Ruby on Rails, 간결한 문법',
+    type: 'web',
+    icon: '💎',
+    content: 'Ruby 내용'
+  },
+  {
+    id: 'scala',
+    title: 'Scala',
+    description: '함수형 프로그래밍, JVM',
+    type: 'functional',
     icon: '⚡',
-    content: '성능 아키텍처 내용'
+    content: 'Scala 내용'
   },
   {
-    id: 'scalability-architecture',
-    title: '확장성 아키텍처',
-    description: '확장 가능한 아키텍처',
-    type: 'scalability',
-    icon: '📈',
-    content: '확장성 아키텍처 내용'
-  },
-  {
-    id: 'monitoring-architecture',
-    title: '모니터링 아키텍처',
-    description: '시스템 모니터링 아키텍처',
-    type: 'monitoring',
-    icon: '📊',
-    content: '모니터링 아키텍처 내용'
+    id: 'haskell',
+    title: 'Haskell',
+    description: '순수 함수형, 타입 시스템',
+    type: 'functional',
+    icon: 'λ',
+    content: 'Haskell 내용'
   }
 ];
 
 const getNodeColor = (type: string) => {
   switch (type) {
-    case 'pattern': return 'bg-blue-600 dark:bg-blue-500';
-    case 'style': return 'bg-green-600 dark:bg-green-500';
-    case 'microservices': return 'bg-purple-600 dark:bg-purple-500';
-    case 'cloud': return 'bg-yellow-600 dark:bg-yellow-500';
-    case 'security': return 'bg-red-600 dark:bg-red-500';
-    case 'performance': return 'bg-orange-600 dark:bg-orange-500';
-    case 'scalability': return 'bg-indigo-600 dark:bg-indigo-500';
-    case 'monitoring': return 'bg-pink-600 dark:bg-pink-500';
+    case 'backend': return 'bg-blue-600 dark:bg-blue-500';
+    case 'frontend': return 'bg-green-600 dark:bg-green-500';
+    case 'general': return 'bg-purple-600 dark:bg-purple-500';
+    case 'web': return 'bg-yellow-600 dark:bg-yellow-500';
+    case 'system': return 'bg-red-600 dark:bg-red-500';
+    case 'functional': return 'bg-indigo-600 dark:bg-indigo-500';
+    case 'mobile': return 'bg-orange-600 dark:bg-orange-500';
+    case 'data': return 'bg-pink-600 dark:bg-pink-500';
     default: return 'bg-gray-600 dark:bg-gray-500';
   }
 };
 
-export default function ArchitecturePage() {
-  const [selectedNode, setSelectedNode] = useState<ArchitectureNode | null>(null);
+export default function ProgrammingLanguagesPage() {
+  const [selectedNode, setSelectedNode] = useState<LanguageNode | null>(null);
   const [isZoomed, setIsZoomed] = useState(false);
 
-  const handleNodeClick = (node: ArchitectureNode) => {
-    setSelectedNode(node);
-    setIsZoomed(true);
+  const handleNodeClick = (node: LanguageNode) => {
+    if (node.id === 'java') {
+      window.location.href = '/java';
+    } else {
+      setSelectedNode(node);
+      setIsZoomed(true);
+    }
   };
 
   const handleClose = () => {
@@ -115,21 +151,21 @@ export default function ArchitecturePage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-black dark:text-white mb-4">
-            🏗️ 아키텍처 (Architecture)
+            💻 프로그래밍 언어 (Programming Languages)
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            소프트웨어 아키텍처, 디자인 패턴, 마이크로서비스에 대한 종합적인 가이드
+            범용, 웹, 시스템, 함수형 언어에 대한 종합적인 가이드
           </p>
         </div>
         
         {/* Breadcrumb */}
         <div className="mb-6">
-          <Breadcrumb items={[{ label: '아키텍처' }]} />
+          <Breadcrumb items={[{ label: '프로그래밍 언어' }]} />
         </div>
 
-        {/* Architecture Components Grid */}
+        {/* Languages Components Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {architectureNodes.map((node) => (
+          {languageNodes.map((node) => (
             <Card 
               key={node.id} 
               className="cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border border-gray-200 dark:border-gray-800"
