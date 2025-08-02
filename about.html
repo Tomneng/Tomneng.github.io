@@ -1,0 +1,276 @@
+---
+layout: default
+title: About
+---
+
+<div class="container">
+    <div class="about-page">
+        <div class="about-header">
+            <h1>About Me</h1>
+            <p class="lead">개발자 Tomneng의 소개 페이지입니다.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="card">
+                <h2>👋 안녕하세요!</h2>
+                <p>저는 웹 개발과 프로그래밍에 열정을 가진 개발자입니다. 새로운 기술을 배우고 공유하는 것을 좋아하며, 이 블로그를 통해 제가 배운 것들과 경험을 나누고자 합니다.</p>
+            </div>
+
+            <div class="card">
+                <h2>🛠️ 기술 스택</h2>
+                <div class="skills">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>HTML5, CSS3, JavaScript</li>
+                            <li>React, Vue.js</li>
+                            <li>TypeScript</li>
+                            <li>Bootstrap, Tailwind CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>Node.js, Express</li>
+                            <li>Python, Django, Flask</li>
+                            <li>Java, Spring Boot</li>
+                            <li>PHP, Laravel</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Database</h3>
+                        <ul>
+                            <li>MySQL, PostgreSQL</li>
+                            <li>MongoDB</li>
+                            <li>Redis</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>DevOps & Tools</h3>
+                        <ul>
+                            <li>Docker, Kubernetes</li>
+                            <li>AWS, Azure</li>
+                            <li>Git, GitHub</li>
+                            <li>CI/CD</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🎯 관심 분야</h2>
+                <div class="interests">
+                    <div class="interest-item">
+                        <h3>웹 개발</h3>
+                        <p>모던 웹 기술을 활용한 사용자 친화적인 웹 애플리케이션 개발</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3>클라우드 기술</h3>
+                        <p>AWS, Azure 등 클라우드 플랫폼을 활용한 스케일러블한 시스템 구축</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3>오픈소스</h3>
+                        <p>오픈소스 프로젝트 기여 및 커뮤니티 활동</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3>기술 블로깅</h3>
+                        <p>학습한 내용을 정리하고 공유하는 기술 블로깅</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📚 교육 & 경력</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 - 현재</div>
+                        <div class="timeline-content">
+                            <h3>웹 개발자</h3>
+                            <p>풀스택 웹 개발 및 클라우드 기술 활용</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 - 2023</div>
+                        <div class="timeline-content">
+                            <h3>컴퓨터공학 학사</h3>
+                            <p>웹 개발 및 소프트웨어 엔지니어링 전공</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📞 연락처</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/tomneng" target="_blank">GitHub</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/tomneng" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:your-email@example.com">Email</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-twitter"></i>
+                        <a href="https://twitter.com/tomneng" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.about-page {
+    padding: 2rem 0;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+.about-content {
+    display: grid;
+    gap: 2rem;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f2f6;
+}
+
+.skill-category li:last-child {
+    border-bottom: none;
+}
+
+.interests {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.interest-item h3 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.timeline {
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 120px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #667eea;
+}
+
+.timeline-date {
+    width: 120px;
+    font-weight: bold;
+    color: #667eea;
+    padding-right: 2rem;
+}
+
+.timeline-content h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9ff;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #667eea;
+}
+
+.contact-item a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: #667eea;
+}
+
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2rem;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-item::before {
+        display: none;
+    }
+    
+    .timeline-date {
+        width: auto;
+        padding-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+</style> 

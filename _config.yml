@@ -1,0 +1,88 @@
+# Site settings
+title: Tomneng's Blog
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://tomneng.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-coffeescript
+  - jekyll-commonmark-ghpages
+  - jekyll-github-metadata
+  - jekyll-avatar
+  - jekyll-remote-theme
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-redirect-from
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
+  - jekyll-default-layout
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-toc
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Tomneng"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Pagination
+paginate: 5
+paginate_path: "/page/:num/"
+
+# Social media
+social:
+  name: Tomneng
+  email: your-email@example.com
+  links:
+    - https://github.com/tomneng
+    - https://twitter.com/tomneng
+
+# SEO
+author:
+  name: Tomneng
+  email: your-email@example.com
+  bio: "개발자 블로그"
+  location: "Seoul, Korea"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/tomneng" 

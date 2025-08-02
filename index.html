@@ -1,0 +1,146 @@
+---
+layout: default
+title: Home
+---
+
+<div class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1>안녕하세요! 👋</h1>
+            <h2>저는 Tomneng입니다</h2>
+            <p>개발자이자 블로거로서 기술과 생각을 공유하는 공간입니다.</p>
+            <div class="hero-buttons">
+                <a href="/blog/" class="btn">블로그 보기</a>
+                <a href="/about/" class="btn btn-outline">자세히 보기</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <section class="featured-posts">
+        <h2>최근 포스트</h2>
+        <div class="blog-list">
+            {% for post in site.posts limit:3 %}
+            <article class="blog-item">
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <div class="post-meta">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">
+                        {{ post.date | date: "%Y년 %m월 %d일" }}
+                    </time>
+                    {% if post.author %}
+                    <span class="author">by {{ post.author }}</span>
+                    {% endif %}
+                </div>
+                {% if post.excerpt %}
+                <div class="excerpt">{{ post.excerpt }}</div>
+                {% endif %}
+                {% if post.tags %}
+                <div class="tags">
+                    {% for tag in post.tags %}
+                    <a href="/tags/{{ tag | downcase }}/" class="tag">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <a href="/blog/" class="btn">모든 포스트 보기</a>
+        </div>
+    </section>
+
+    <section class="about-preview">
+        <div class="card">
+            <h2>About Me</h2>
+            <p>안녕하세요! 저는 개발자 Tomneng입니다. 웹 개발, 프로그래밍, 그리고 기술에 대한 생각들을 이 블로그에서 공유하고 있습니다.</p>
+            <p>주요 관심 분야:</p>
+            <ul>
+                <li>웹 개발 (Frontend/Backend)</li>
+                <li>JavaScript, Python, Java</li>
+                <li>클라우드 기술</li>
+                <li>오픈소스 프로젝트</li>
+            </ul>
+            <a href="/about/" class="btn">더 자세히 보기</a>
+        </div>
+    </section>
+</div>
+
+<style>
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #667eea;
+}
+
+.featured-posts {
+    margin: 4rem 0;
+}
+
+.featured-posts h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+.about-preview {
+    margin: 4rem 0;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style> 

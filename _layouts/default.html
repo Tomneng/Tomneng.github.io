@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "ko" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+    
+    <!-- SEO -->
+    {% seo %}
+    
+    <!-- Feed -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="site-title">
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                </div>
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+                        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+                        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="site-main">
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    {% if site.social.links %}
+                        {% for link in site.social.links %}
+                            <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html> 
