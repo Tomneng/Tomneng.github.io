@@ -6,9 +6,12 @@ title: Home
 <div class="hero-section">
     <div class="container">
         <div class="hero-content">
+            <div class="hero-badge">
+                <span>🚀 새로운 블로그에 오신 것을 환영합니다</span>
+            </div>
             <h1>안녕하세요! 👋</h1>
             <h2>저는 Tomneng입니다</h2>
-            <p>개발자이자 블로거로서 기술과 생각을 공유하는 공간입니다.</p>
+            <p class="hero-description">개발자이자 블로거로서 기술과 생각을 공유하는 공간입니다. 최신 웹 기술과 개발 경험을 나누고 있습니다.</p>
             <div class="hero-buttons">
                 <a href="/blog/" class="btn">블로그 보기</a>
                 <a href="/about/" class="btn btn-outline">자세히 보기</a>
@@ -68,27 +71,48 @@ title: Home
 
 <style>
 .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 4rem 0;
+    background: hsl(var(--background));
+    border-bottom: 1px solid hsl(var(--border));
+    padding: 6rem 0 4rem;
     text-align: center;
 }
 
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 1rem;
+    color: hsl(var(--foreground));
+    letter-spacing: -0.025em;
 }
 
 .hero-content h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
-    opacity: 0.9;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: hsl(var(--muted-foreground));
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.8;
+.hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    color: hsl(var(--muted-foreground));
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-buttons {
@@ -100,13 +124,13 @@ title: Home
 
 .btn-outline {
     background: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
 }
 
 .btn-outline:hover {
-    background: white;
-    color: #667eea;
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
 }
 
 .featured-posts {
